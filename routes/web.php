@@ -15,3 +15,7 @@ Route::get('/login', function () {
 Route::get('/kamar', function () {
     return view('kamar');
 });
+
+Route::get('/penghuni', function () {
+    return view('penghuni');
+});
