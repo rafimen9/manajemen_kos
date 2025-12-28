@@ -48,8 +48,8 @@
     <!-- SIDEBAR -->
     <div class="sidebar">
         <h2>Kos Manager</h2>
-        <div class="menu-item">🏠 Dashboard</div>
-        <div class="menu-item">📦 Data Kamar</div>
+        <div class="menu-item"onclick="window.location.href='{{ url('/home') }}'">🏠 Dashboard</div>
+        <div class="menu-item"onclick="window.location.href='{{ url('/kamar') }}'">📦 Data Kamar</div>
         <div class="menu-item" style="background:#374151;">👥 Penghuni</div>
         <div class="menu-item">💳 Pembayaran</div>
         <div class="menu-item">📊 Laporan</div>
