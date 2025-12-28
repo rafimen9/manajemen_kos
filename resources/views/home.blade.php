@@ -109,11 +109,11 @@
     <div class="sidebar">
         <h2>Kos Manager</h2>
         <div class="menu-item">🏠 Dashboard</div>
-        <div class="menu-item">📦 Data Kamar</div>
-        <div class="menu-item">👥 Penghuni</div>
-        <div class="menu-item">💳 Pembayaran</div>
-        <div class="menu-item">📊 Laporan</div>
-        <div class="menu-item">⚙️ Pengaturan</div>
+        <div class="menu-item"onclick="window.location.href='{{ url('/kamar') }}'">📦 Data Kamar</div>
+        <div class="menu-item"onclick="window.location.href='{{ url('/penghuni') }}'">👥 Penghuni</div>
+        <div class="menu-item"onclick="window.location.href='{{ url('/pembayaran') }}'">💳 Pembayaran</div>
+        <div class="menu-item"onclick="window.location.href='{{ url('/laporan') }}'">📊 Laporan</div>
+        <div class="menu-item"onclick="window.location.href='{{ url('/pengaturan') }}'">⚙️ Pengaturan</div>
     </div>
 
     <!-- CONTENT -->
