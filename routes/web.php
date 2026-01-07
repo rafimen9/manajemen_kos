@@ -1,21 +1,30 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KamarController;
+use App\Http\Controllers\PenghuniController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
+use Illuminate\Support\Facades\Auth;
 
-
-
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect('/home');
+    }
+    return redirect('/login');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
+    
+    Route::resource('/kamar', KamarController::class);
+    Route::resource('/penghuni', PenghuniController::class);
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    
+    Route::post('/logout', function () {
+        Auth::logout();
+        return redirect('/login');
+    })->name('logout');
 });
 
-Route::get('/kamar', function () {
-    return view('kamar');
-});
-
-Route::get('/penghuni', function () {
-    return view('penghuni');
-});
+Auth::routes();
